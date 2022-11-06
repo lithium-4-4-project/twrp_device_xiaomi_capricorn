@@ -15,4 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_capricorn.mk
+    $(LOCAL_DIR)/twrp_capricorn.mk
+
+COMMON_LUNCH_CHOICES := twrp_capricorn-eng

@@ -1,2 +1,1 @@
-add_lunch_combo omni_capricorn-eng
-add_lunch_combo omni_capricorn-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true

@@ -17,14 +17,21 @@
 # Release name
 PRODUCT_RELEASE_NAME := capricorn
 
-$(call inherit-product, build/target/product/embedded.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
+# Inherit from this product for devices that support only 64-bit apps using:
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+
+# Inherit from capricorn device
+$(call inherit-product, device/xiaomi/capricorn/device.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := capricorn
-PRODUCT_NAME := omni_capricorn
+PRODUCT_NAME := twrp_capricorn
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5s
 PRODUCT_MANUFACTURER := Xiaomi
